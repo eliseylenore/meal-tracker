@@ -16,6 +16,7 @@ var food_component_1 = require('./food.component');
 var food_list_component_1 = require('./food-list.component');
 var edit_food_component_1 = require('./edit-food.component');
 var new_food_component_1 = require('./new-food.component');
+var day_list_component_1 = require('./day-list.component');
 var calories_pipe_1 = require('./calories.pipe');
 var AppModule = (function () {
     function AppModule() {
@@ -29,6 +30,7 @@ var AppModule = (function () {
                 food_list_component_1.FoodListComponent,
                 edit_food_component_1.EditFoodComponent,
                 new_food_component_1.NewFoodComponent,
+                day_list_component_1.DayListComponent,
                 calories_pipe_1.CaloriesPipe
             ],
             bootstrap: [app_component_1.AppComponent]
