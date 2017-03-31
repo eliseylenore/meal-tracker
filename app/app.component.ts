@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { Food } from './food.model';
 import { foodListComponent } from './food-list.component';
 import { editFoodComponent } from './edit-food.component';
+import { newFoodComponent } from './new-food.component';
 
 @Component({
   selector: 'app-root',
   template: `
-  <h1>Eat Better</h1>
-  <food-list [foodList]="foodList" (clickSender)="selectEditFood($event)"></food-list>
-  <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
+  <div class="container">
+    <h1>Eat Better</h1>
+    <new-food (newFoodSender)="addNewFood($event)"></new-food>
+    <food-list [foodList]="foodList" (clickSender)="selectEditFood($event)"></food-list>
+    <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
+  </div>
   `
 })
 
@@ -22,5 +26,9 @@ export class AppComponent {
 
   finishEditFood() {
     this.selectedFood = new Food(null, null, NaN);
+  }
+
+  addNewFood(food) {
+    this.foodList.push(food);
   }
 }

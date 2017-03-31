@@ -21,10 +21,13 @@ var AppComponent = (function () {
     AppComponent.prototype.finishEditFood = function () {
         this.selectedFood = new food_model_1.Food(null, null, NaN);
     };
+    AppComponent.prototype.addNewFood = function (food) {
+        this.foodList.push(food);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            template: "\n  <h1>Eat Better</h1>\n  <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n  <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n  "
+            template: "\n  <div class=\"container\">\n    <h1>Eat Better</h1>\n    <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n    <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n    <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
