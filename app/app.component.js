@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            template: "\n  <div class=\"container\">\n    <food-container></food-container>\n  </div>\n  "
+            template: "\n  <div class=\"container\">\n    <h1>Eat Better</h1>\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n      </div>\n      <div class=\"col-md-8\">\n        <food-container></food-container>\n      </div>\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -27,7 +27,7 @@ var FoodComponent = (function () {
     FoodComponent = __decorate([
         core_1.Component({
             selector: 'food-container',
-            template: "\n    <h1>Eat Better</h1>\n    <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n    <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n    <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n  "
+            template: "\n    <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n    <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n    <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodComponent);

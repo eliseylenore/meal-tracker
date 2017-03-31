@@ -8,7 +8,6 @@ import { NewFoodComponent } from './new-food.component';
 @Component({
   selector: 'food-container',
   template: `
-    <h1>Eat Better</h1>
     <new-food (newFoodSender)="addNewFood($event)"></new-food>
     <food-list [foodList]="foodList" (clickSender)="selectEditFood($event)"></food-list>
     <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>

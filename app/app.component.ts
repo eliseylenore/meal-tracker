@@ -10,7 +10,14 @@ import { NewFoodComponent } from './new-food.component';
   selector: 'app-root',
   template: `
   <div class="container">
-    <food-container></food-container>
+    <h1>Eat Better</h1>
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-8">
+        <food-container></food-container>
+      </div>
+    </div>
   </div>
   `
 })
