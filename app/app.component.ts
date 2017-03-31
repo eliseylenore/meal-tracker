@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Food } from './food.model';
-import { foodListComponent } from './food-list.component';
-import { editFoodComponent } from './edit-food.component';
-import { newFoodComponent } from './new-food.component';
+import { FoodListComponent } from './food-list.component';
+import { EditFoodComponent } from './edit-food.component';
+import { NewFoodComponent } from './new-food.component';
 
 @Component({
   selector: 'app-root',

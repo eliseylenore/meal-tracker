@@ -21,7 +21,7 @@ import { Food } from './food.model';
   `
 })
 
-export class editFoodComponent {
+export class EditFoodComponent {
   @Input() selectedFood: Food;
   @Output() editClickSender = new EventEmitter();
 

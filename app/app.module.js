@@ -15,13 +15,20 @@ var app_component_1 = require('./app.component');
 var food_list_component_1 = require('./food-list.component');
 var edit_food_component_1 = require('./edit-food.component');
 var new_food_component_1 = require('./new-food.component');
+var calories_pipe_1 = require('./calories.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, food_list_component_1.foodListComponent, edit_food_component_1.editFoodComponent, new_food_component_1.newFoodComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                food_list_component_1.FoodListComponent,
+                edit_food_component_1.EditFoodComponent,
+                new_food_component_1.NewFoodComponent,
+                calories_pipe_1.CaloriesPipe
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

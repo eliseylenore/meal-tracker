@@ -9,29 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var foodListComponent = (function () {
-    function foodListComponent() {
+var FoodListComponent = (function () {
+    function FoodListComponent() {
         this.clickSender = new core_1.EventEmitter();
+        this.filterByCalories = "allFoods";
     }
-    foodListComponent.prototype.editButtonClicked = function (foodToEdit) {
+    FoodListComponent.prototype.editButtonClicked = function (foodToEdit) {
         this.clickSender.emit(foodToEdit);
+    };
+    FoodListComponent.prototype.setFilter = function (value) {
+        this.filterByCalories = value;
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], foodListComponent.prototype, "foodList", void 0);
+    ], FoodListComponent.prototype, "foodList", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], foodListComponent.prototype, "clickSender", void 0);
-    foodListComponent = __decorate([
+    ], FoodListComponent.prototype, "clickSender", void 0);
+    FoodListComponent = __decorate([
         core_1.Component({
             selector: 'food-list',
-            template: "\n  <div *ngFor='let food of foodList'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n    <button class=\"btn btn-info\" (click)=\"editButtonClicked(food)\">Edit</button>\n  </div>\n  "
+            template: "\n  <ul class=\"nav nav-tabs\">\n    <li role=\"presentation\" class=\"active\" (click)=\"setFilter('allFoods')\"><a href=\"#\">All Foods</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('lowCalorie')\"><a href=\"#\">Low Calorie</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('highCalorie')\"><a href=\"#\">High Calorie</a></li>\n  </ul>\n  <div *ngFor='let food of foodList | calories: filterByCalories'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n    <button class=\"btn btn-info\" (click)=\"editButtonClicked(food)\">Edit</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], foodListComponent);
-    return foodListComponent;
+    ], FoodListComponent);
+    return FoodListComponent;
 }());
-exports.foodListComponent = foodListComponent;
+exports.FoodListComponent = FoodListComponent;
 //# sourceMappingURL=food-list.component.js.map

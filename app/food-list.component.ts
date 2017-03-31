@@ -4,7 +4,12 @@ import { Food } from './food.model';
 @Component({
   selector: 'food-list',
   template:`
-  <div *ngFor='let food of foodList'>
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active" (click)="setFilter('allFoods')"><a href="#">All Foods</a></li>
+    <li role="presentation" (click)="setFilter('lowCalorie')"><a href="#">Low Calorie</a></li>
+    <li role="presentation" (click)="setFilter('highCalorie')"><a href="#">High Calorie</a></li>
+  </ul>
+  <div *ngFor='let food of foodList | calories: filterByCalories'>
     <h2>{{food.name}}</h2>
     <h5>Calories: {{food.calories}}</h5>
     <h5>{{food.notes}}</h5>
@@ -13,11 +18,16 @@ import { Food } from './food.model';
   `
 })
 
-export class foodListComponent {
+export class FoodListComponent {
   @Input() foodList: Food[];
   @Output() clickSender = new EventEmitter();
+  filterByCalories: string="allFoods";
 
   editButtonClicked(foodToEdit: Food) {
     this.clickSender.emit(foodToEdit);
+  }
+
+  setFilter(value) {
+    this.filterByCalories = value;
   }
 }

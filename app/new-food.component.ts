@@ -20,7 +20,7 @@ import { Food } from './food.model';
   `
 })
 
-export class newFoodComponent {
+export class NewFoodComponent {
   @Output() newFoodSender = new EventEmitter();
 
   showNewFoodForm = false;

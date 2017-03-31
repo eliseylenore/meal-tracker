@@ -10,29 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var food_model_1 = require('./food.model');
-var editFoodComponent = (function () {
-    function editFoodComponent() {
+var EditFoodComponent = (function () {
+    function EditFoodComponent() {
         this.editClickSender = new core_1.EventEmitter();
     }
-    editFoodComponent.prototype.finishedEdit = function () {
+    EditFoodComponent.prototype.finishedEdit = function () {
         this.editClickSender.emit();
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', food_model_1.Food)
-    ], editFoodComponent.prototype, "selectedFood", void 0);
+    ], EditFoodComponent.prototype, "selectedFood", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], editFoodComponent.prototype, "editClickSender", void 0);
-    editFoodComponent = __decorate([
+    ], EditFoodComponent.prototype, "editClickSender", void 0);
+    EditFoodComponent = __decorate([
         core_1.Component({
             selector: 'edit-food',
             template: "\n  <div>\n    <div *ngIf = \"selectedFood.name\">\n      <div class=\"form-group\">\n        <input [(ngModel)]=\"selectedFood.name\" class='form-control'>\n      </div>\n      <div class=\"form-group\">\n        <input [(ngModel)]=\"selectedFood.notes\" class='form-control'>\n      </div>\n      <div class=\"form-group\">\n        <input [(ngModel)]=\"selectedFood.calories\" class='form-control'>\n      </div>\n    <button class=\"btn btn-info\" (click)='finishedEdit()'>Done</button>\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], editFoodComponent);
-    return editFoodComponent;
+    ], EditFoodComponent);
+    return EditFoodComponent;
 }());
-exports.editFoodComponent = editFoodComponent;
+exports.EditFoodComponent = EditFoodComponent;
 //# sourceMappingURL=edit-food.component.js.map
