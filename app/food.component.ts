@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { Food } from './food.model';
 import { Day } from './day.model';
-import { food } from './food.component';
 import { FoodListComponent } from './food-list.component';
 import { EditFoodComponent } from './edit-food.component';
 import { NewFoodComponent } from './new-food.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'food',
   template: `
-  <div class="container">
-    <food></food>
-  </div>
+    <h1>Eat Better</h1>
+    <new-food (newFoodSender)="addNewFood($event)"></new-food>
+    <food-list [foodList]="foodList" (clickSender)="selectEditFood($event)"></food-list>
+    <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
   `
 })
 
-export class AppComponent {
+export class FoodComponent {
   foodList: Food[] = [new Food("Raisins", "1 cup", 494), new Food("Chiclets", "15 pieces", 150), new Food("Oatmeal", "1 cup, with blueberries and milk", 350)];
   selectedFood = new Food(null, null, NaN);
 
