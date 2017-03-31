@@ -1,1 +1,1 @@
-{"version":3,"file":"food.model.js","sourceRoot":"","sources":["food.model.ts"],"names":[],"mappings":";AAAA;IAAA;IAIA,CAAC;IAAD,WAAC;AAAD,CAAC,AAJD,IAIC;AAJY,YAAI,OAIhB,CAAA"}
+{"version":3,"file":"food.model.js","sourceRoot":"","sources":["food.model.ts"],"names":[],"mappings":";AAAA;IAEE,cACS,IAAY,EACZ,KAAa,EACb,QAAgB;QAFhB,SAAI,GAAJ,IAAI,CAAQ;QACZ,UAAK,GAAL,KAAK,CAAQ;QACb,aAAQ,GAAR,QAAQ,CAAQ;IACtB,CAAC;IACN,WAAC;AAAD,CAAC,AAPD,IAOC;AAPY,YAAI,OAOhB,CAAA"}

@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var food_model_1 = require('./food.model');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.foodList = [new food_model_1.Food("Raisins", "1 cup", 494), new food_model_1.Food("Chiclets", "15 pieces", 150), new food_model_1.Food("Oatmeal", "1 cup, with blueberries and milk", 350)];
+var foodListComponent = (function () {
+    function foodListComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], foodListComponent.prototype, "foodList", void 0);
+    foodListComponent = __decorate([
         core_1.Component({
-            selector: 'app-root',
-            template: "\n  <h1>Eat Better</h1>\n  <food-list [foodList]=\"foodList\"></food-list>\n  "
+            selector: 'food-list',
+            template: "\n  <div *ngFor='let food of foodList'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], foodListComponent);
+    return foodListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.foodListComponent = foodListComponent;
+//# sourceMappingURL=food-list.component.js.map
