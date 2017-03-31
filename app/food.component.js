@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var food_model_1 = require('./food.model');
+var day_model_1 = require('./day.model');
 var FoodComponent = (function () {
     function FoodComponent() {
         this.selectedFood = new food_model_1.Food(null, null, NaN);
@@ -21,16 +22,16 @@ var FoodComponent = (function () {
         this.selectedFood = new food_model_1.Food(null, null, NaN);
     };
     FoodComponent.prototype.addNewFood = function (foodToAdd) {
-        this.foodList.push(this.selectedFood);
+        this.day.foods.push(this.selectedFood);
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Array)
-    ], FoodComponent.prototype, "foodList", void 0);
+        __metadata('design:type', day_model_1.Day)
+    ], FoodComponent.prototype, "day", void 0);
     FoodComponent = __decorate([
         core_1.Component({
             selector: 'food-container',
-            template: "\n    <div>\n      <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n      <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n      <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n    </div>\n  "
+            template: "\n  <h1>{{day.date}}</h1>\n    <div>\n      <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n      <food-list [day]=\"day\" (clickSender)=\"selectEditFood($event)\"></food-list>\n      <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodComponent);

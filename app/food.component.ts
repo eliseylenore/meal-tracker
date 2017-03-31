@@ -8,16 +8,17 @@ import { NewFoodComponent } from './new-food.component';
 @Component({
   selector: 'food-container',
   template: `
+  <h1>{{day.date}}</h1>
     <div>
       <new-food (newFoodSender)="addNewFood($event)"></new-food>
-      <food-list [foodList]="foodList" (clickSender)="selectEditFood($event)"></food-list>
+      <food-list [day]="day" (clickSender)="selectEditFood($event)"></food-list>
       <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
     </div>
   `
 })
 
 export class FoodComponent {
-  @Input() foodList: Food[];
+  @Input() day: Day;
   selectedFood: Food = new Food(null, null, NaN);
 
   selectEditFood(food) {
@@ -29,6 +30,6 @@ export class FoodComponent {
   }
 
   addNewFood(foodToAdd: Food) {
-    this.foodList.push(this.selectedFood);
+    this.day.foods.push(this.selectedFood);
   }
 }

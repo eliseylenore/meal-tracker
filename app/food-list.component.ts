@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Food } from './food.model';
+import { Day } from './day.model';
 
 @Component({
   selector: 'food-list',
@@ -9,7 +10,7 @@ import { Food } from './food.model';
     <li role="presentation" (click)="setFilter('lowCalorie')" [class.active]="filterByCalories === 'lowCalorie'"><a href="#">Low Calorie</a></li>
     <li role="presentation" (click)="setFilter('highCalorie')" [class.active]="filterByCalories === 'highCalorie'" [class.active]="filterByCalories === 'highCalorie'"><a href="#">High Calorie</a></li>
   </ul>
-  <div *ngFor='let food of foodList | calories: filterByCalories'>
+  <div *ngFor='let food of day.foods | calories: filterByCalories'>
     <h2>{{food.name}}</h2>
     <h5>Calories: {{food.calories}}</h5>
     <h5>{{food.notes}}</h5>
@@ -19,7 +20,7 @@ import { Food } from './food.model';
 })
 
 export class FoodListComponent {
-  @Input() foodList: Food[];
+  @Input() day: Day;
   @Output() clickSender = new EventEmitter();
   filterByCalories: string="allFoods";
 

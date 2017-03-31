@@ -17,7 +17,7 @@ import { DayListComponent } from './day-list.component';
         <day-list [dayList]="dayList" (sendSelectedDay)="selectDay($event)"></day-list>
       </div>
       <div class="col-md-8">
-        <food-container [foodList]="selectedDay.foods"></food-container>
+        <food-container [day]="selectedDay"></food-container>
       </div>
     </div>
   </div>
