@@ -12,7 +12,7 @@ export class Day {
   public totalCalories(foods: Food[]) {
     var calories: number = 0;
     for(let food of foods) {
-      calories += calories;
+      calories += food.calories;
     }
     return calories;
   }

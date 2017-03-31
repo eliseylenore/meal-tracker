@@ -9,7 +9,7 @@ var Day = (function () {
         var calories = 0;
         for (var _i = 0, foods_1 = foods; _i < foods_1.length; _i++) {
             var food = foods_1[_i];
-            calories += calories;
+            calories += food.calories;
         }
         return calories;
     };

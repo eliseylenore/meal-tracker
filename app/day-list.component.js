@@ -19,7 +19,7 @@ var DayListComponent = (function () {
     DayListComponent = __decorate([
         core_1.Component({
             selector: 'day-list',
-            template: "\n  <div *ngFor=\"let day of dayList\">\n    <h2>Hello</h2>\n  </div>\n  "
+            template: "\n  <h1>Food Log</h1>\n  <div *ngFor=\"let day of dayList\">\n    <h3>{{day.date}}</h3>\n    <h5>{{day.calories}} calories</h5>\n    <h5 *ngFor=\"let food of day.foods\">{{food.calories}}</h5>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], DayListComponent);
