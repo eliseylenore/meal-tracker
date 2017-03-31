@@ -8,7 +8,8 @@ import { NewFoodComponent } from './new-food.component';
 @Component({
   selector: 'food-container',
   template: `
-  <h1>{{day.date}}</h1>
+  <h1>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h1>
+  <h2>Total Calories: {{day.calories}}</h2>
     <div>
       <new-food (newFoodSender)="addNewFood($event)"></new-food>
       <food-list [day]="day" (clickSender)="selectEditFood($event)"></food-list>
@@ -30,6 +31,6 @@ export class FoodComponent {
   }
 
   addNewFood(foodToAdd: Food) {
-    this.day.foods.push(this.selectedFood);
+    this.day.foods.push(foodToAdd);
   }
 }
