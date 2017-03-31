@@ -8,12 +8,14 @@ import { NewFoodComponent } from './new-food.component';
 @Component({
   selector: 'food-container',
   template: `
-  <h1>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h1>
-  <h2>Total Calories: {{day.calories}}</h2>
-    <div>
-      <new-food (newFoodSender)="addNewFood($event)"></new-food>
-      <food-list [day]="day" (clickSender)="selectEditFood($event)"></food-list>
-      <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
+  <div class="food-container">
+    <h1>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h1>
+    <h2>Total Calories: {{day.calories}}</h2>
+      <div>
+        <new-food (newFoodSender)="addNewFood($event)"></new-food>
+        <food-list [day]="day" (clickSender)="selectEditFood($event)"></food-list>
+        <edit-food [selectedFood]="selectedFood" (editClickSender)="finishEditFood($event)"></edit-food>
+      </div>
     </div>
   `
 })

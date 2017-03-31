@@ -31,7 +31,7 @@ var FoodComponent = (function () {
     FoodComponent = __decorate([
         core_1.Component({
             selector: 'food-container',
-            template: "\n  <h1>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h1>\n  <h2>Total Calories: {{day.calories}}</h2>\n    <div>\n      <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n      <food-list [day]=\"day\" (clickSender)=\"selectEditFood($event)\"></food-list>\n      <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n    </div>\n  "
+            template: "\n  <div class=\"food-container\">\n    <h1>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h1>\n    <h2>Total Calories: {{day.calories}}</h2>\n      <div>\n        <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n        <food-list [day]=\"day\" (clickSender)=\"selectEditFood($event)\"></food-list>\n        <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodComponent);

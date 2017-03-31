@@ -6,7 +6,7 @@ import { Day } from './day.model';
   selector: 'day-list',
   template:`
   <h1>Food Log</h1>
-  <div *ngFor="let day of dayList">
+  <div *ngFor="let day of dayList" class="day-list-item">
     <div (click)="onSelect(day)">
       <h3>{{day.date.getMonth()+ 1}}/{{day.date.getDay()}}/{{day.date.getFullYear()}}</h3>
       <h5>Total Calories: {{day.calories}}</h5>
