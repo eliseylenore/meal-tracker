@@ -30,7 +30,7 @@ var newFoodComponent = (function () {
     newFoodComponent = __decorate([
         core_1.Component({
             selector: 'new-food',
-            template: "\n  <button *ngIf=\"!showNewFoodForm\" class=\"btn btn-info\" (click)=\"newFoodForm()\">New Food</button>\n  <div *ngIf=\"showNewFoodForm\">\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodName>\n    </div>\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodNotes>\n    </div>\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodCalories>\n    </div>\n    <button (click)=\"makeNewFood\" class=\"btn btn-info\">Add</button>\n  </div>\n  "
+            template: "\n  <button *ngIf=\"!showNewFoodForm\" class=\"btn btn-info\" (click)=\"newFoodForm()\">New Food</button>\n  <div *ngIf=\"showNewFoodForm\">\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodName placeholder=\"Food you ate\">\n    </div>\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodNotes placeholder=\"Notes (how much you ate, what time, etc.)\">\n    </div>\n    <div class=\"form-group\">\n      <input class=\"form-control\" #newFoodCalories placeholder=\"Calories\">\n    </div>\n    <button (click)=\"makeNewFood(newFoodName.value, newFoodNotes.value, newFoodCalories.value)\" class=\"btn btn-info\">Add</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], newFoodComponent);

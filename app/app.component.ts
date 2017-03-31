@@ -28,7 +28,7 @@ export class AppComponent {
     this.selectedFood = new Food(null, null, NaN);
   }
 
-  addNewFood(food) {
-    this.foodList.push(food);
+  addNewFood(foodToAdd: Food) {
+    this.foodList.push(foodToAdd);
   }
 }

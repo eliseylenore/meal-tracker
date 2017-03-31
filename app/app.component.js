@@ -21,8 +21,8 @@ var AppComponent = (function () {
     AppComponent.prototype.finishEditFood = function () {
         this.selectedFood = new food_model_1.Food(null, null, NaN);
     };
-    AppComponent.prototype.addNewFood = function (food) {
-        this.foodList.push(food);
+    AppComponent.prototype.addNewFood = function (foodToAdd) {
+        this.foodList.push(foodToAdd);
     };
     AppComponent = __decorate([
         core_1.Component({
