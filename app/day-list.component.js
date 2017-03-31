@@ -12,10 +12,14 @@ var core_1 = require('@angular/core');
 var DayListComponent = (function () {
     function DayListComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], DayListComponent.prototype, "dayList", void 0);
     DayListComponent = __decorate([
         core_1.Component({
             selector: 'day-list',
-            template: "\n  <div>\n    <h2>Hello</h2>\n  </div>\n  "
+            template: "\n  <div *ngFor=\"let day of dayList\">\n    <h2>Hello</h2>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], DayListComponent);

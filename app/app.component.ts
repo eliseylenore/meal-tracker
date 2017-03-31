@@ -14,7 +14,7 @@ import { DayListComponent } from './day-list.component';
     <h1>Eat Better</h1>
     <div class="row">
       <div class="col-md-4">
-        <day-list></day-list>
+        <day-list [dayList]="dayList"></day-list>
       </div>
       <div class="col-md-8">
         <food-container></food-container>
