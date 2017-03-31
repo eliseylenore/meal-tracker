@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var food_component_1 = require('./food.component');
 var food_list_component_1 = require('./food-list.component');
 var edit_food_component_1 = require('./edit-food.component');
 var new_food_component_1 = require('./new-food.component');
@@ -24,6 +25,7 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
                 app_component_1.AppComponent,
+                food_component_1.FoodComponent,
                 food_list_component_1.FoodListComponent,
                 edit_food_component_1.EditFoodComponent,
                 new_food_component_1.NewFoodComponent,

@@ -6,7 +6,7 @@ import { EditFoodComponent } from './edit-food.component';
 import { NewFoodComponent } from './new-food.component';
 
 @Component({
-  selector: 'food',
+  selector: 'food-container',
   template: `
     <h1>Eat Better</h1>
     <new-food (newFoodSender)="addNewFood($event)"></new-food>

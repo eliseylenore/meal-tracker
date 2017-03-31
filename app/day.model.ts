@@ -1,15 +1,18 @@
+import { Food } from './food.model';
+
 export class Day {
-  public calories: number = totalCalories();
+
+  public calories: number = this.totalCalories(this.foods);
 
   constructor(
-    public date: date,
-    public foods: Food[],
+    public date: Date,
+    public foods: Food[]
   ){ }
 
-  var totalCalories = function() {
-    calories = 0;
+  public totalCalories(foods: Food[]) {
+    var calories: number = 0;
     for(let food of foods) {
-      calories += food.calories;
+      calories += calories;
     }
     return calories;
   }
