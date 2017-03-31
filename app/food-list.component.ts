@@ -5,9 +5,9 @@ import { Food } from './food.model';
   selector: 'food-list',
   template:`
   <ul class="nav nav-tabs">
-    <li role="presentation" class="active" (click)="setFilter('allFoods')"><a href="#">All Foods</a></li>
-    <li role="presentation" (click)="setFilter('lowCalorie')"><a href="#">Low Calorie</a></li>
-    <li role="presentation" (click)="setFilter('highCalorie')"><a href="#">High Calorie</a></li>
+    <li role="presentation" [class.active]="filterByCalories === 'allFoods'" (click)="setFilter('allFoods')"><a href="#">All Foods</a></li>
+    <li role="presentation" (click)="setFilter('lowCalorie')" [class.active]="filterByCalories === 'lowCalorie'"><a href="#">Low Calorie</a></li>
+    <li role="presentation" (click)="setFilter('highCalorie')" [class.active]="filterByCalories === 'highCalorie'" [class.active]="filterByCalories === 'highCalorie'"><a href="#">High Calorie</a></li>
   </ul>
   <div *ngFor='let food of foodList | calories: filterByCalories'>
     <h2>{{food.name}}</h2>

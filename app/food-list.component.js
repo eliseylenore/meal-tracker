@@ -31,7 +31,7 @@ var FoodListComponent = (function () {
     FoodListComponent = __decorate([
         core_1.Component({
             selector: 'food-list',
-            template: "\n  <ul class=\"nav nav-tabs\">\n    <li role=\"presentation\" class=\"active\" (click)=\"setFilter('allFoods')\"><a href=\"#\">All Foods</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('lowCalorie')\"><a href=\"#\">Low Calorie</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('highCalorie')\"><a href=\"#\">High Calorie</a></li>\n  </ul>\n  <div *ngFor='let food of foodList | calories: filterByCalories'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n    <button class=\"btn btn-info\" (click)=\"editButtonClicked(food)\">Edit</button>\n  </div>\n  "
+            template: "\n  <ul class=\"nav nav-tabs\">\n    <li role=\"presentation\" [class.active]=\"filterByCalories === 'allFoods'\" (click)=\"setFilter('allFoods')\"><a href=\"#\">All Foods</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('lowCalorie')\" [class.active]=\"filterByCalories === 'lowCalorie'\"><a href=\"#\">Low Calorie</a></li>\n    <li role=\"presentation\" (click)=\"setFilter('highCalorie')\" [class.active]=\"filterByCalories === 'highCalorie'\" [class.active]=\"filterByCalories === 'highCalorie'\"><a href=\"#\">High Calorie</a></li>\n  </ul>\n  <div *ngFor='let food of foodList | calories: filterByCalories'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n    <button class=\"btn btn-info\" (click)=\"editButtonClicked(food)\">Edit</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodListComponent);
