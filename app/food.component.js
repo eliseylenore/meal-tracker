@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var food_model_1 = require('./food.model');
 var FoodComponent = (function () {
     function FoodComponent() {
-        this.foodList = [new food_model_1.Food("Raisins", "1 cup", 494), new food_model_1.Food("Chiclets", "15 pieces", 150), new food_model_1.Food("Oatmeal", "1 cup, with blueberries and milk", 350)];
         this.selectedFood = new food_model_1.Food(null, null, NaN);
     }
     FoodComponent.prototype.selectEditFood = function (food) {
@@ -22,12 +21,16 @@ var FoodComponent = (function () {
         this.selectedFood = new food_model_1.Food(null, null, NaN);
     };
     FoodComponent.prototype.addNewFood = function (foodToAdd) {
-        this.foodList.push(foodToAdd);
+        this.foodList.push(this.selectedFood);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], FoodComponent.prototype, "foodList", void 0);
     FoodComponent = __decorate([
         core_1.Component({
             selector: 'food-container',
-            template: "\n    <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n    <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n    <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n  "
+            template: "\n    <div>\n      <new-food (newFoodSender)=\"addNewFood($event)\"></new-food>\n      <food-list [foodList]=\"foodList\" (clickSender)=\"selectEditFood($event)\"></food-list>\n      <edit-food [selectedFood]=\"selectedFood\" (editClickSender)=\"finishEditFood($event)\"></edit-food>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodComponent);

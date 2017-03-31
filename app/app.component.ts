@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Food } from './food.model';
 import { Day } from './day.model';
 import { FoodComponent } from './food.component';
@@ -14,10 +14,10 @@ import { DayListComponent } from './day-list.component';
     <h1>Eat Better</h1>
     <div class="row">
       <div class="col-md-4">
-        <day-list [dayList]="dayList"></day-list>
+        <day-list [dayList]="dayList" (sendSelectedDay)="selectDay($event)"></day-list>
       </div>
       <div class="col-md-8">
-        <food-container></food-container>
+        <food-container [foodList]="selectedDay.foods"></food-container>
       </div>
     </div>
   </div>
@@ -25,8 +25,8 @@ import { DayListComponent } from './day-list.component';
 })
 
 export class AppComponent {
-  dayList:
-    Day[] = [
+
+  dayList:Day[] = [
       new Day(new Date("2016-05-12"),
       [new Food("Raisins", "1 cup", 500),
       new Food("Chiclets", "15 pieces", 150),
@@ -41,7 +41,11 @@ export class AppComponent {
       [new Food("Jamon", "6oz", 200),
       new Food("Eggies and Toast", "", 600),
       new Food("Fruties", "smallish banana with PB", 29)]),
-
     ]
 
+  selectedDay:Day = this.dayList[0];
+
+  selectDay(sentDay) {
+    this.selectedDay = sentDay;
+  }
 }

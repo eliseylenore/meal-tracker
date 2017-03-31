@@ -24,11 +24,15 @@ var AppComponent = (function () {
                 new food_model_1.Food("Eggies and Toast", "", 600),
                 new food_model_1.Food("Fruties", "smallish banana with PB", 29)]),
         ];
+        this.selectedDay = this.dayList[0];
     }
+    AppComponent.prototype.selectDay = function (sentDay) {
+        this.selectedDay = sentDay;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            template: "\n  <div class=\"container\">\n    <h1>Eat Better</h1>\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <day-list [dayList]=\"dayList\"></day-list>\n      </div>\n      <div class=\"col-md-8\">\n        <food-container></food-container>\n      </div>\n    </div>\n  </div>\n  "
+            template: "\n  <div class=\"container\">\n    <h1>Eat Better</h1>\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <day-list [dayList]=\"dayList\" (sendSelectedDay)=\"selectDay($event)\"></day-list>\n      </div>\n      <div class=\"col-md-8\">\n        <food-container [foodList]=\"selectedDay.foods\"></food-container>\n      </div>\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
