@@ -11,15 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var foodListComponent = (function () {
     function foodListComponent() {
+        this.clickSender = new core_1.EventEmitter();
     }
+    foodListComponent.prototype.editButtonClicked = function (foodToEdit) {
+        this.clickSender.emit(foodToEdit);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
     ], foodListComponent.prototype, "foodList", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], foodListComponent.prototype, "clickSender", void 0);
     foodListComponent = __decorate([
         core_1.Component({
             selector: 'food-list',
-            template: "\n  <div *ngFor='let food of foodList'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n  </div>\n  "
+            template: "\n  <div *ngFor='let food of foodList'>\n    <h2>{{food.name}}</h2>\n    <h5>Calories: {{food.calories}}</h5>\n    <h5>{{food.notes}}</h5>\n    <button class=\"btn btn-info\" (click)=\"editButtonClicked(food)\">Edit</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], foodListComponent);
